@@ -7,16 +7,16 @@
 
 function maxChar(str) {
     const chars = {};
-    let mostCommonlyUsed = '';
-    let maxCountOfOccurences = 0;
-    str.split('').forEach(ch => {
-        chars[ch] = chars[ch] ? chars[ch] + 1 : 1;
-        if (chars[ch] > maxCountOfOccurences) {
-            maxCountOfOccurences = chars[ch];
-            mostCommonlyUsed = ch;
+    let mostCommonlyUsedChar = '';
+    let maxOccursOfSameCharacter = 0;
+    str.split('').forEach(char => {
+        chars[char] = chars[char] + 1 || 1;
+        if (chars[char] > maxOccursOfSameCharacter) {
+            maxOccursOfSameCharacter = chars[char];
+            mostCommonlyUsedChar = char;
         }
     });
-    return mostCommonlyUsed;
+    return mostCommonlyUsedChar;
 }
 
 module.exports = maxChar;
