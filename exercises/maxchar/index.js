@@ -6,13 +6,13 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-    const map = {};
+    const chars = {};
     let mostCommonlyUsed = '';
     let maxCountOfOccurences = 0;
     str.split('').forEach(ch => {
-        map[ch] = map[ch] ? map[ch] + 1 : 1;
-        if (map[ch] > maxCountOfOccurences) {
-            maxCountOfOccurences = map[ch];
+        chars[ch] = chars[ch] ? chars[ch] + 1 : 1;
+        if (chars[ch] > maxCountOfOccurences) {
+            maxCountOfOccurences = chars[ch];
             mostCommonlyUsed = ch;
         }
     });
