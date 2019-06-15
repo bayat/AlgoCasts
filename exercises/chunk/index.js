@@ -10,6 +10,21 @@
 
 function chunk(array, size) {
     const chunks = [];
+    for (let el of array) {
+        const last = chunks[chunks.length - 1];
+
+        if (!last || last.length === size) {
+            chunks.push([el]);
+        } else {
+            last.push(el);
+        }
+    }
+    return chunks;
+}
+
+/*
+function chunk(array, size) {
+    const chunks = [];
     let tempChunk = [];
     for (let i = 0; i < array.length; i++) {
         tempChunk.push(array[i]);
@@ -20,5 +35,6 @@ function chunk(array, size) {
     }
     return chunks;
 }
+*/
 
 module.exports = chunk;
