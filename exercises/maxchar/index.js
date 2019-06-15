@@ -5,6 +5,18 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+function maxChar(str) {
+    const map = {};
+    let mostCommonlyUsed = '';
+    let maxCountOfOccurences = 0;
+    str.split('').forEach(ch => {
+        map[ch] = map[ch] ? map[ch] + 1 : 1;
+        if (map[ch] > maxCountOfOccurences) {
+            maxCountOfOccurences = map[ch];
+            mostCommonlyUsed = ch;
+        }
+    });
+    return mostCommonlyUsed;
+}
 
 module.exports = maxChar;
