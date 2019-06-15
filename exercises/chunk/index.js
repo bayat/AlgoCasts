@@ -10,6 +10,17 @@
 
 function chunk(array, size) {
     const chunks = [];
+    let i = 0;
+    while (i < array.length) {
+        chunks.push(array.slice(i, i + size));
+        i = i + size;
+    }
+    return chunks;
+}
+
+/*
+function chunk(array, size) {
+    const chunks = [];
     for (let el of array) {
         const last = chunks[chunks.length - 1];
 
@@ -20,7 +31,7 @@ function chunk(array, size) {
         }
     }
     return chunks;
-}
+}*/
 
 /*
 function chunk(array, size) {
