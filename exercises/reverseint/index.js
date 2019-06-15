@@ -24,11 +24,7 @@ function reverseInt(n) {
     for (let i = arr.length - 1; i >= 0; i--) {
         result += Math.pow(10, i) * arr[i];
     }
-    if (n > 0) {
-        return result;
-    } else {
-        return 0 - result;
-    }
+    return result * Math.sign(n);
 }
 
 module.exports = reverseInt;
