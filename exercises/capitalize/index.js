@@ -8,20 +8,10 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    let previousNotLetter = true;
-    let resultString = '';
-    for (let index = 0; index < str.length; index++) {
-        const currentIsLetter = alphabet.includes(str[index].toLowerCase());
-        if (previousNotLetter && currentIsLetter) {
-            resultString += str[index].toUpperCase();
-        } else {
-            resultString += str[index];
-        }
-        previousNotLetter = !currentIsLetter;
-
-    }
-    return resultString;
+    return str
+        .split(' ')
+        .map(word => word[0].toUpperCase() + word.slice(1))
+        .join(' ');
 }
 
 module.exports = capitalize;
